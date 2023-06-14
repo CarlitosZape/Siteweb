@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de inicio de sesión</title>
+</head>
+<body>
+    <h1>Iniciar sesión</h1>
+    <form>
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" value="Iniciar sesión">
+    </form>
+
+    <div id="contenido">
+        <!-- Aquí se mostrará el contenido después de iniciar sesión -->
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if (username === "Carolina" && password === "amordemivida") {
+                document.getElementById("contenido").innerHTML = "<p>Amo mucho a mi hermosa novia Carolina Hernández.</p>";
+            } else {
+                alert("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+            }
+        });
+    </script>
+</body>
+</html>
